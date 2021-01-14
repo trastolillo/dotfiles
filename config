@@ -59,7 +59,7 @@ bindsym $mod+Shift+q kill
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # start rofi menu
-bindsym $mod+d exec rofi --show run -opacity "70" -columns 2
+bindsym $mod+d exec rofi -show run -opacity "70" -columns 2 -font "Nunito 12"
 # bindsym $mod+d exec rofi --show run
 
 # change focus
@@ -114,8 +114,8 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: "
-set $ws2 "2: "  
+set $ws1 "1"
+set $ws2 "2"  
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
@@ -123,7 +123,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10:"
+set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -151,7 +151,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Default workspaces
 assign [class="FreeTube"] $ws10
-assign [class="Firefox"] $ws2
+assign [class="firefox"] $ws2
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -190,10 +190,11 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-	position top
-        status_command i3blocks -c ~/.config/i3/i3blocks/i3blocks.conf
-}
+#bar {
+	#position top
+        #status_command i3blocks -c ~/.config/i3/i3blocks/i3blocks.conf
+        #status_command i3status
+#}
 
 # client.focused #666699 #666699 #666699 #666699
 
@@ -201,8 +202,10 @@ bindsym $mod+shift+x exec i3lock
 
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym Ctrl+F8 exec xbacklight -inc 20 # increase screen brightness
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym Ctrl+F7 exec xbacklight -dec 20 # decrease screen brightness
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Touchpad controls
 # bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
@@ -231,3 +234,6 @@ for_window [class="^.*"] border pixel 3
 
 # Transparencias y transiciones
 exec picom -b -f
+
+# Polybar launch script
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
