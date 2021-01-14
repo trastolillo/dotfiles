@@ -152,6 +152,8 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # Default workspaces
 assign [class="FreeTube"] $ws10
 assign [class="firefox"] $ws2
+assign [class="Org.gnome.Nautilus"] $ws4
+assign [class="libreoffice-startcenter|Soffice"] $ws3
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -199,7 +201,7 @@ bindsym $mod+r mode "resize"
 # client.focused #666699 #666699 #666699 #666699
 
 bindsym $mod+shift+x exec i3lock
-
+bindsym $mod+u exec firefox
 
 # Sreen brightness controls
 bindsym Ctrl+F8 exec xbacklight -inc 20 # increase screen brightness
@@ -237,3 +239,10 @@ exec picom -b -f
 
 # Polybar launch script
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Alt + Tab siguiente ws
+bindsym Mod1+Tab workspace next
+bindsym Mod1+Shift+Tab workspace prev
+
+# Floating windows
+for_window [class="MEGAsync"] floating enable
