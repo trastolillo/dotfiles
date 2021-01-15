@@ -63,6 +63,10 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show run -opacity "70" -columns 2 -font "Nunito 12"
 # bindsym $mod+d exec rofi --show run
 
+# Rofi y GreenClip
+exec_always --no-startup-id greenclip daemon
+bindsym $mod+z exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
