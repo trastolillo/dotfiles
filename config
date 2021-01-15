@@ -247,3 +247,6 @@ bindsym Mod1+Shift+Tab workspace prev
 
 # Floating windows
 for_window [class="MEGAsync"] floating enable
+
+# Suspend
+bindsym $mod+shift+s exec systemctl suspend
