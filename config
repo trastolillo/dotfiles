@@ -243,7 +243,7 @@ exec megasync
 exec_always feh --bg-scale /home/trastolillo/Imágenes/backgrounds/background.jpg
 
 # Keyboard layouts
-exec_always "setxkbmap -model pc104 -layout us,es -variant ,, -option grp:ctrl_shift_toggle"
+exec_always "setxkbmap -model pc104 -layout us,es -variant ,, -option grp:rctrl_toggle"
 
 # Smarts gaps
 gaps outer 5
