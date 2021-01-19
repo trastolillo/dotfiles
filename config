@@ -6,6 +6,9 @@
 # this file and re-run i3-config-wizard(1).
 #
 
+# Caps Lock to Super
+exec --no-startup-id setxkbmap -option caps:super &
+
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -29,6 +32,9 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Pamac al tray
 exec --no-startup-id pamac-tray &
+
+# Notificaciones
+exec --no-startup-id dunst
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -237,7 +243,7 @@ exec megasync
 exec_always feh --bg-scale /home/trastolillo/Imágenes/backgrounds/background.jpg
 
 # Keyboard layouts
-exec_always "setxkbmap -model pc104 -layout us,es -variant ,, -option grp:alt_shift_toggle"
+exec_always "setxkbmap -model pc104 -layout us,es -variant ,, -option grp:ctrl_shift_toggle"
 
 # Smarts gaps
 gaps outer 5
@@ -267,3 +273,6 @@ bindsym $mod+shift+s exec systemctl suspend
 
 # Shutdown
 bindsym $mod+Mod1+v exec systemctl poweroff
+
+#Reboot
+bindsym $mod+Mod1+q exec systemctl reboot
